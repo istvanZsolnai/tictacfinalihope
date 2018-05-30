@@ -1,5 +1,5 @@
 import sys
-
+#kezdetek kezdete
 a1 = 7
 a2 = 4
 a3 = 1
