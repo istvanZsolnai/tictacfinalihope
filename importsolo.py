@@ -1,7 +1,8 @@
+from sound import winsound, tiesound, loosersound
 
 if input("If you want to play single player press S, or anything else to play multi player: ").casefold() == "S".casefold():
-    import solotictactoe
-    solotictactoe.tic_tac_toe_single()
+    from solotictactoe import tic_tac_toe_single
+    tic_tac_toe_single()
 else:
     def tic_tac_toe():
         board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -59,13 +60,11 @@ else:
             for a in win_commbinations:
                 if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;31;40mX\033[0m":
                     print(player1, " won!\n")
-                    import sound
                     winsound()
                     print("Good Job!\n")
                     return True
                 if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;34;40mO\033[0m":
                     print(player2," won!\n")
-                    import sound
                     winsound()
                     print("Good Job!\n")
                     return True
@@ -74,7 +73,6 @@ else:
                     count += 1
                 if count == 9:
                     print("Its a Tie!\n")
-                    import sound
                     tiesound()
                     return True
         #While end is not true the program keeps on running, 
