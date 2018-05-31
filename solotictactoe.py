@@ -1,4 +1,5 @@
 import random
+from sound import winsound, loosersound, tiesound
 def tic_tac_toe_single():
     board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     end = False
@@ -69,13 +70,11 @@ def tic_tac_toe_single():
         for a in win_commbinations:
             if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;31;40mX\033[0m":
                 print(player1, " won!\n")
-                import sound
                 winsound()
                 print("Good Job!\n")
                 return True
             if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;34;40mO\033[0m":
-                print("Computer won!\n")
-                import sound
+                print("Computer won and you lose!\n")
                 loosersound()
                 print("Good Job!\n")
                 return True
@@ -84,7 +83,6 @@ def tic_tac_toe_single():
                 count += 1
             if count == 9:
                 print("Its a Tie!\n")
-                import sound
                 tiesound()
                 return True
     #While end is not true the program keeps on running, 
@@ -103,9 +101,9 @@ def tic_tac_toe_single():
         p2()
         print()
     #play again feature
-    if input("If you want to play again press R!\n") == "R":
+    if input("If you want to play again press R!\n").casefold() == "R".casefold():
         print("Good decision\n")
-        tic_tac_toe()
+        tic_tac_toe_single()
     else:
         print("See you later!\n")
 
