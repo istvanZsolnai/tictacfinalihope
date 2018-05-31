@@ -59,10 +59,14 @@ else:
             for a in win_commbinations:
                 if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;31;40mX\033[0m":
                     print(player1, " won!\n")
+                    import sound
+                    winsound()
                     print("Good Job!\n")
                     return True
                 if board[a[0]] == board[a[1]] == board[a[2]] == "\033[1;34;40mO\033[0m":
                     print(player2," won!\n")
+                    import sound
+                    winsound()
                     print("Good Job!\n")
                     return True
             for a in range(9):
@@ -70,6 +74,8 @@ else:
                     count += 1
                 if count == 9:
                     print("Its a Tie!\n")
+                    import sound
+                    tiesound()
                     return True
         #While end is not true the program keeps on running, 
         while not end:
